@@ -1,0 +1,109 @@
+@import 'jeet/framework'
+@import 'jeet/goodies'
+.cf
+	cf()
+.container
+	center(960px)
+	position: relative
+#main-header
+	col(1,1,1)
+	> div
+		span()
+		a
+			col(27,96)
+			&:nth-child(2)
+				span(42,96)
+			img
+				width 100%
+		cf()
+	> nav
+		span()
+		padding-left: 50px
+		padding-right: get(1,96)
+		position: relative
+		background: #F5F5F5
+		> a, > input
+			border-right 1px solid #DDD
+			line-height: 2
+		> a
+			text-align center
+			text-decoration: none
+			span(9,91)
+			&:nth-of-type(1)
+				width 50px
+				position: absolute
+				left 0
+				top 0
+			&:nth-of-type(4)
+				span(12,91)
+			&:nth-of-type(5)
+				span(13,91)
+			&:nth-of-type(8)
+				span(8,91)
+		> input
+			span(12, 91)
+			width get(12,91) !important
+			max-height 100%
+			padding 7px 2px
+			border-bottom none
+			border-left none
+			border-top none
+
+#main-container
+	> aside
+		position: absolute
+		width 50px
+		background blue
+		height 100%
+		display block
+	> div
+		padding-left 50px;
+		col()
+		> .slider
+			span()
+			position: relative
+			margin-top: 10px
+			margin-bottom: 10px
+			> a
+				span(8,89)
+				position: absolute
+				background gray
+				height 100%
+				&:nth-of-type(1)
+					left 0
+				&:nth-of-type(2)
+					right 0
+			> div img
+				span(73, 89)
+				off(8, 89, l, s)
+		> .news-column > div
+			col(1,3,3)
+			article
+				background #e9e9e9
+				margin-bottom 10px
+				span()
+				> img
+					span()
+
+
+// Mobile
+bp()
+#main-header
+	> div > a
+		display none
+		&:nth-of-type(2)
+			display block
+			span()
+	> nav
+		padding 0
+	> nav > input
+		display none
+	> nav > a
+		border-right none
+		stack()
+		&:nth-of-type(1), &:nth-of-type(4), &:nth-of-type(5), &:nth-of-type(8)
+			stack()
+
+#main-container > div > .news-column > div
+	stack()
+endbp()
